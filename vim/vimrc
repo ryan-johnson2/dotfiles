@@ -1,0 +1,56 @@
+" only use vim
+set nocompatible
+
+" load according to filetype
+filetype plugin indent on
+
+" manage runtime in .vim/bundle
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+" syntax highlighting
+syntax on
+set number
+
+" tabs place 4 space
+set autoindent
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+
+" set backspace to work as normal
+set backspace=indent,eol,start
+
+" switch between buffers without saving
+set hidden
+
+" show info
+set showmode
+set showcmd
+
+" highlight while searchign
+set incsearch
+
+" make faster redraws
+set ttyfast
+set lazyredraw
+set cursorline
+
+" dont stop search at EOF
+set wrapscan
+
+" colorscheme
+set term=screen-256color
+set t_ut=
+set background=dark
+colorscheme monokai
+
+" turn off arrows
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" map kj to exit insert mode
+imap kj <Esc>
