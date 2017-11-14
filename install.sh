@@ -1,7 +1,13 @@
 #!/bin/bash
 
-ln -s vim ~/.vim
-ln -s bashrc ~/.bashrc
-ln -s gitconfig	~/.gitconfig
-ln -s tmux.conf ~/.tmux.conf
-ln -s inputrc ~/.inputrc
+DOTPATH=$(pwd)
+DOTFILES=(vim bashrc gitconfig tmux.conf inputrc)
+
+for DOTFILE in ${DOTFILES[*]}
+do
+    rm -rf $HOME/.$DOTFILE
+    ln -s $DOTPATH/$DOTFILE $HOME/.$DOTFILE
+done
+
+source $HOME/.bashrc
+source $HOME/.inputrc

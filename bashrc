@@ -9,7 +9,7 @@ esac
 # Start tmux
 if [[ ! -z $(which tmux) ]]
 then
-    [[ -z $TMUX ]] && { tmux -2 attach || tmux -2 && exit; }
+    [[ -z $TMUX ]] && { tmux -2 attach || tmux -2 new-session -s main && exit; }
 fi
 
 # Prompt
@@ -31,7 +31,7 @@ export PAGER='/usr/bin/less'
 
 # bash aliases
 alias ll='ls -al'
-alias lsd='ls -a | grep ^\\.'
+alias lsd='ls -al | \grep \\.[a-z]*'
 alias ps='ps -ef'
 alias pss='ps -ef | grep'
 alias grep='grep --color=always'
