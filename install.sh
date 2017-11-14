@@ -1,7 +1,9 @@
 #!/bin/bash
 
+NOINC="install.sh"
 DOTPATH=$(pwd)
-DOTFILES=$(ls | grep -v install.sh)
+DOTFILES=$(ls | grep -Ev $NOINC)
+
 
 for DOTFILE in ${DOTFILES[*]}
 do

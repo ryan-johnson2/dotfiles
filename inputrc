@@ -1,4 +1,8 @@
 set editing-mode vi
+# set show-mode-in-prompt on
+# set vi-ins-mode-string \033[38;5;2m\[+]
+# set vi-cmd-mode-string \033[38;5;1m\[:]
+
 set completion-ignore-case on
 set show-all-if-ambiguos on
 set bell-style none
