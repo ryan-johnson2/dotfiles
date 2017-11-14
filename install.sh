@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTPATH=$(pwd)
-DOTFILES=(vim bashrc gitconfig tmux.conf inputrc)
+DOTFILES=$(ls | grep -v install.sh)
 
 for DOTFILE in ${DOTFILES[*]}
 do
