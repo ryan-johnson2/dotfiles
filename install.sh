@@ -7,9 +7,9 @@ DOTFILES=$(ls | grep -Ev $NOINC)
 
 for DOTFILE in ${DOTFILES[*]}
 do
-    rm -rf $HOME/.$DOTFILE
-    ln -s $DOTPATH/$DOTFILE $HOME/.$DOTFILE
+    rm -rf "$HOME/.$DOTFILE"
+    ln -s "$DOTPATH/$DOTFILE" "$HOME/.$DOTFILE"
 done
 
-source $HOME/.bashrc
-source $HOME/.inputrc
+source "$HOME/.bashrc"
+source "$HOME/.inputrc"

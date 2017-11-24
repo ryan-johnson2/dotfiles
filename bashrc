@@ -6,12 +6,6 @@ case $- in
       *) return;;
 esac
 
-# Start tmux
-if [[ ! -z $(which tmux) ]]
-then
-    [[ -z $TMUX ]] && { tmux -2 attach || tmux -2 new-session -s main && exit; }
-fi
-
 # Prompt
 export PS1="\[\033[38;5;39m\][\A]\[$(tput sgr0)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[\033[38;5;2m\]\h\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;39m\][\W]\[$(tput sgr0)\]\[\033[38;5;2m\]\\$\[$(tput sgr0)\] "
 
