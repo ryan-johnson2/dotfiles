@@ -10,6 +10,3 @@ do
     rm -rf "$HOME/.$DOTFILE"
     ln -s "$DOTPATH/$DOTFILE" "$HOME/.$DOTFILE"
 done
-
-source "$HOME/.bashrc"
-source "$HOME/.inputrc"
