@@ -7,7 +7,7 @@ case $- in
 esac
 
 # Prompt
-export PS1="\[\033[38;5;39m\][\A]\[$(tput sgr0)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[\033[38;5;2m\]\h\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;39m\][\W]\[$(tput sgr0)\]\[\033[38;5;2m\]\\$\[$(tput sgr0)\] "
+export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[\033[38;5;2m\]\h\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;39m\][\W]\[$(tput sgr0)\]\[\033[38;5;2m\]\\$\[$(tput sgr0)\] "
 
 # Dir Listsing Colors
 export CLICOLOR=true
