@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# This script is used to increase and decrese the 
+# keyboard backlight intensity
+
+# path to the controlling file for the backlight
+path="/sys/class/leds/smc::kbd_backlight/brightness"
+
+# check for correct amount of input
+if [ $# -lt 2 ]
+then
+    echo 'Usage: $0 [ -inc | -dec ] num'
+    exit 1
+fi
+
+# get the modifier and value
+mod=$1
+val=$2
+
+# get the current intensity
+curr=$(cat $path)
+
+if [ $mod = '-inc' ]; then
+    # If the modifier is inc then we increment
+    # the current value by the value. If that value
+    # is greater than 255 set the intensity to 255
+    # other wise set to the new value
+    set=$(($curr + $val))
+    if [ $set -gt 255 ]; then
+        sudo su - -c "echo 255 > $path"
+    else
+        sudo su - -c "echo $set > $path"
+    fi
+elif [ $mod = '-dec' ]; then
+    # Same idea as -inc but decrement the value
+    set=$(($curr - $val))
+    if [ $set -lt 0 ]; then
+        sudo su - -c "echo 0 > $path"
+    else
+        sudo su - -c "echo $set > $path"
+    fi
+else
+    # if the 1st argument is no -inc or -dec
+    # print the usage again
+    echo 'Usage: $0 [ -inc | -dec ] num'
+fi
