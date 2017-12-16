@@ -12,6 +12,10 @@ execute pathogen#infect()
 syntax on
 set number
 
+" Color column 120
+set colorcolumn=100
+highlight ColorColumn ctermbg=black
+
 " tabs place 4 space
 set autoindent
 set expandtab
@@ -55,12 +59,3 @@ noremap <Right> <Nop>
 " map kj to exit insert mode
 imap kj <Esc>
 
-" syntactic stuff
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0

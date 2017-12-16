@@ -15,6 +15,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pactl load-module module-bluetooth-discover
 exec --no-startup-id blueman-applet
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
+exec --no-startup-id xinput set-prop 13 "Synaptics Palm Detection" 1
 
 ###############
 # KEYBINDINGS #
@@ -95,6 +96,8 @@ mode "open" {
     bindsym m exec "i3-msg exec spotify && i3-msg mode 'default'"
     bindsym e exec "i3-msg exec thunderbird && i3-msg mode 'default'"
     bindsym t exec "i3-msg exec texstudio && i3-msg mode 'default'"
+    bindsym g exec "i3-msg exec gedit && i3-msg mode 'default'"
+
 }
 
 # Got to open mode
